@@ -1,0 +1,94 @@
+@use "../partials/mixins" as *;
+@use "../partials/variables" as *;
+
+/** PÁGINA SOBRE MI **/
+
+.sobremi {
+  display: flex; /*activo flexbox*/
+  flex-direction: column; /* los hijos se apilan verticalmente, uno debajo del otro */
+  align-items: center;
+  gap: 2.5rem; /*espacios entre los hijos*/
+  padding: 2rem; /*espacio interno ya usado varias veces en otros contenedores*/
+  margin: 1rem 0 3rem 0; /*espacio externo*/
+ @include sombra; /*sombra del section*/
+  border-radius: 10px; /*redondeo del section*/ 
+
+  .sobremi-contenedor {
+    @include flex-center(); /*incluyo el mixin para centrar el contenido*/
+    gap: 3rem;
+  }
+
+  .sobremi-imagen1 {
+
+    img { /*imagen dentro del contenedor*/
+      width: 220px;
+      height: auto; /*mantiene la proporción original de la imagen*/
+      border-radius: 12px; /*redondeo de la imagen*/
+      transition: transform 0.3s ease; /*transición suave para el efecto hover*/
+    }
+
+    img:hover {
+      transform: scale(1.08); /*al pasar el mouse sobre la imagen se agranda un poco para dar un efecto */
+    }
+
+  }
+
+  .sobremi-contenido { /*este es el contenedor del texto dentro de la sección sobre mi*/
+    background-color: rgba(255, 255, 255, 0.05); /*fondo semitransparente para mejorar la legibilidad*/
+    padding: 1.8rem 2.2rem; /*espacio interno del contenedor del texto*/
+    border-radius: 12px; /*redondeo del contenedor del texto*/
+    font-family: $font-principal; /* Fuente principal */
+    font-size: 1rem; /* Tamaño de fuente */
+    line-height: 1.6; /* Interlineado para mejorar la legibilidad */
+    color: #FFF59D; /*color del texto*/
+    max-width: 600px; /*ancho máximo para evitar que el texto se extienda demasiado en pantallas grandes*/
+    @include sombra; /*sombra del contenedor del texto*/
+  }
+
+  .sobremi-parrafo {
+    font-family: $font-principal; /* Fuente principal */
+    line-height: 1.6; /*interlineado para mejorar la legibilidad*/
+    font-size: 1rem; /*tamaño de fuente*/
+    text-align: center;
+  }
+
+}
+
+/* media query para tablet */
+
+@media (max-width: 1024px) {
+
+  .sobremi-contenedor {
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .sobremi-imagen1 img {
+    width: 200px;
+  }
+
+  .sobremi-contenido {
+    padding: 1rem;
+  }
+
+}
+
+/*MEDIA QUERIES PARA MOBILE*/
+@media (max-width: 767px) {
+
+  .sobremi-contenedor {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .sobremi-imagen1 img {
+    width: 160px;
+  }
+
+  .sobremi-contenido {
+    padding: 1rem;
+  }
+
+}

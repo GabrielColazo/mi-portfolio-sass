@@ -1,0 +1,12 @@
+@use "variables" as *;
+
+body {
+font-family: $font-principal;
+line-height: 1.6;
+font-size: $fs-400;
+background-color: $color-fondo;
+color: $color-texto;
+padding: 1.5rem;
+}
+
+

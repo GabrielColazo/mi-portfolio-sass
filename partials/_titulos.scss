@@ -1,0 +1,31 @@
+@use "../partials/mixins" as *;
+@use "../partials/variables" as *;
+
+.titulo {
+  text-align: center;
+}
+
+.titulo-principal {
+  font-weight: 700;
+  font-family:$font-principal;
+
+  span {
+    color: #FF8C00;
+  }
+}
+
+.subtitulo {
+  font-family: $font-principal;
+  font-size: 1.25rem;
+  color: #FFF59D;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.linea {
+  width: 180px;
+  height: 2px;
+  background: #ff7a18;
+  margin: 2rem auto;
+  border: none;
+}

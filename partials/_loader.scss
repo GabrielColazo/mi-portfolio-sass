@@ -1,0 +1,72 @@
+@use "../partials/variables" as *;
+
+/* Contenedor de pantalla completa */
+#loader-wrapper {
+  position: fixed;
+  inset: 0;
+  background: #1a1a1a; /* Color de fondo decarga */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: opacity 0.5s ease-out;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.loader {
+  width: 250px; 
+  height: 20px;
+  border-radius: 20px;
+  background: 
+    linear-gradient(#FFF59D 0 0) 0/0% no-repeat /* Color de carga igual al texto */
+    rgba(255, 255, 255, 0.1); /* Color de fondo de la barra */
+  
+  /* 5 segundos de duración, una sola vez, movimiento fluido */
+  animation: l2 5s forwards linear; 
+}
+
+@keyframes l2 {
+  100% { background-size: 100%; }
+}
+
+/* Estilo de texto GABOWEB */
+.loader-text {
+  font-family: var(--font-principal), sans-serif; 
+  color: #FFF59D;
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* Clase para desaparecerlo con JS */
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Estilo para la URL debajo del nombre */
+.loader-url {
+  font-family: var(--font-principal), sans-serif;
+  color: #FFF59D;
+  font-size: 0.9rem;      /* Más pequeño que el título */
+  letter-spacing: 2px;
+  margin-top: 5px;        /* Espacio pegado al nombre */
+  opacity: 0.8;           
+  text-transform: lowercase; /* URL siempre en minúsculas */
+}
+
+/* El contenedor principal  */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
+}

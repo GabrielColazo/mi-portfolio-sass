@@ -1,0 +1,109 @@
+@use "../partials/mixins" as *;
+@use "../partials/variables" as *;
+
+/** APARATADO DE NAVEGACIÓN DEL SITIO WEB **/
+/*utilice flex para alinear el menu de navegación en el elemento nav*/
+
+.navegacion {
+display: flex;
+align-items: center; /*alineo de manera vertical la barra de nav por si llego a colocar un logo*/
+padding: 1rem 3rem; /*el primer item es el eje vertical el segundo item el horizontal*/
+
+}
+
+/*El siguiente logo al hacer click vuelve al index*/
+
+.navegacion-logo { /*características del logo*/
+text-decoration: none; /*saca el subrayado del logo*/
+font-family:$font-principal; /* Fuente principal */
+font-size: 1.25rem;
+font-weight: 600;
+letter-spacing: 1px; /*espacio entre cada letra del logo*/
+color: inherit; /*hereda el color del body para que el logo tenga el mismo color que el resto del texto*/
+}
+
+.logo-web {
+color: #ff7a18; /**El color de la palabra "web" del logo **/
+}
+
+.navegacion-logo:hover { /*cuando paso el mouse sobre el logo se activa esta pseudoclase*/
+transform: scale(1.1);
+}
+
+/*NAVEGACIÓN HORIZONTAL DEL MENU INICIO- PROYECTOS- SOBREMI- CONTACTO*/
+.navegacion {
+
+  .navegacion-lista { /* este es el contenedor de la lista desordenada "ul"*/
+    display: flex; /* el flex logra que tenga un menu horizontal*/
+    gap: 2.5rem; /*este el espacio que tengo en cada li*/
+    list-style: none; /*elimino los puntos del ul*/
+    margin-left: auto; /* empuja el menú a la derecha */
+  }
+
+}
+
+/* ESTILOS VISUALES DE LOS ENLACES DEL MENÚ */
+.navegacion-lista { 
+  a {
+    text-decoration: none;   /* elimina el subrayado de los enlaces */
+    color: #f1e7e7;          /* color inicial de los enlaces */
+    transition: color 0.3s;  /* transición suave cuando cambia el color */
+  }
+
+  a:hover { 
+    /* pseudoclase hover: se activa cuando paso el mouse sobre el enlace */
+    color: #FF8C00; /* color naranja al pasar el mouse */
+  }
+
+  a:active { 
+    /* pseudoclase active: se activa cuando hago clic en el enlace */
+    color: #ff4500;
+  }
+
+  a:focus { 
+    /* pseudoclase focus: se activa cuando navego con el teclado */
+    color: #FF8C00;
+    outline: 3px solid #FFF9C4; /* dibuja el borde de foco */
+    outline-offset: 2px;        /* separa el borde del enlace */
+  }
+}
+
+/*media query para tablets*/
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1024px) {
+
+  .navegacion {
+    padding: 1rem 2rem; /* menos espacio horizontal */
+  }
+
+  .navegacion-logo {
+    font-size: 1.1rem; /* logo un poco más chico */
+  }
+
+  .navegacion {
+
+    .navegacion-lista {
+      gap: 1.8rem; /* reduce la separación entre links */
+    }
+
+  }
+
+}
+/*media query celular*/
+
+@media (max-width: 767px) {
+.navegacion-lista {
+display: flex;
+flex-direction: column;
+gap: 0.8rem;
+justify-content: space-between;
+}
+
+.navegacion-lista li a {
+font-size: 1rem;
+}
+}

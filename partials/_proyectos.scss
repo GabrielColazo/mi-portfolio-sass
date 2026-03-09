@@ -1,0 +1,99 @@
+@use "../partials/mixins" as *;
+
+/* PÁGINA WEB PROYECTOS CONTIENE BOOTSTRAP EN EL CAROUSEL DE IMÁGENES DE PROYECTOS FICTICIOS*/
+
+.proyectos {
+  border-radius: 10px; /*redondeo del section*/
+  @include sombra; /*sombra del section*/
+  padding: 1rem 2rem; /*espacio interno del section*/
+  margin-bottom: 3rem; /*espacio entre el section y el footer*/
+}
+
+/* Contenedor del carousel extraído del Framework Bootstrap*/
+#carouselExample {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+
+  /* Imágenes del carousel */
+  .carousel-item {
+
+    img {
+      height: 350px;
+      object-fit: cover; /* no se deforma */
+      border-radius: 8px;
+    }
+
+  }
+
+}
+
+/*media query para celulares*/
+
+@media (max-width: 767px) {
+#carouselExample {
+max-width: 100%;
+margin: 2rem auto;
+}
+
+#carouselExample img {
+height: 220px;
+}
+
+.carousel-caption {
+position: static;
+background: rgba(0, 0, 0, 0.6);
+padding: 0.5rem;
+margin-top: 0.3rem;
+}
+
+.carousel-caption h5 {
+font-size: 1rem;
+}
+
+.carousel-caption p {
+font-size: 0.8rem;
+}
+}
+
+/*media query para tablets*/
+@media (max-width: 1024px) {
+
+  #carouselExample {
+    max-width: 90%;
+  }
+
+  #carouselExample img {
+    height: 300px;
+  }
+
+}
+
+/*media query para celulares*/
+
+@media (max-width: 767px) {
+
+  #carouselExample {
+    max-width: 100%;
+    margin: 2rem auto;
+  }
+
+  #carouselExample img {
+    height: 220px;
+  }
+
+  .carousel-caption {
+    position: static;
+    background: rgba(0,0,0,0.6);
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.8rem;
+  }
+
+}
