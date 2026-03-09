@@ -630,7 +630,7 @@ body {
 #loader-wrapper {
   position: fixed;
   inset: 0;
-  background: #1a1a1a; /* Color de fondo de tu carga */
+  background: #1a1a1a; /* Color de fondo decarga */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -645,9 +645,8 @@ body {
   gap: 20px;
 }
 
-/* Tu loader modificado */
 .loader {
-  width: 250px; /* Un poco más ancho para que luzca mejor */
+  width: 250px;
   height: 20px;
   border-radius: 20px;
   background: linear-gradient(#FFF59D 0 0) 0/0% no-repeat rgba(255, 255, 255, 0.1); /* Color de fondo de la barra */
@@ -660,7 +659,7 @@ body {
     background-size: 100%;
   }
 }
-/* Estilo de tu texto GABOWEB */
+/* Estilo de texto GABOWEB */
 .loader-text {
   font-family: var(--font-principal), sans-serif;
   color: #FFF59D;
@@ -674,6 +673,25 @@ body {
 .fade-out {
   opacity: 0;
   pointer-events: none;
+}
+
+/* Estilo para la URL debajo del nombre */
+.loader-url {
+  font-family: var(--font-principal), sans-serif;
+  color: #FFF59D;
+  font-size: 0.9rem; /* Más pequeño que el título */
+  letter-spacing: 2px;
+  margin-top: 5px; /* Espacio pegado al nombre */
+  opacity: 0.8;
+  text-transform: lowercase; /* URL siempre en minúsculas */
+}
+
+/* El contenedor principal  */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
